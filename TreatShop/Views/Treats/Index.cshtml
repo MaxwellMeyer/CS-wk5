@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@using TreatShop.Models;
+@model IEnumerable<TreatShop.Models.Treat>
+
+<h1>Check out all of the TREATS we have:</h1>
+
+@if (Model.Any())
+{
+  <ul>
+  @foreach (Treat treat in Model)
+    {
+      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+    }
+  </ul>
+}
+else
+{
+  <h3>Gosh darn it, no treats available!!!</h3>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Add new Treat", "Create")</p>
+}
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
