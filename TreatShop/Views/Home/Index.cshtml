@@ -1,0 +1,50 @@
+@{
+  Layout = "_Layout";
+}
+@using TreatShop.Models;
+
+<h1>Welcome to Pierre's SWEET TREAT SHOP!</h1>
+<h3>We also have savory treats... Dont worry...</h3>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h5>What we have:</h5>
+
+    @if (ViewBag.Treats.Count > 0)
+    {
+      <ul>
+        @foreach (Treat treat in ViewBag.Treats)
+        {
+          <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+        }
+      </ul>
+    }
+    else
+    {
+      <h3>Oh gosh, hope you werent hungry :o ...</h3>
+      <h4>Try again Tomorrow!!</h4>
+    }
+  </div>
+  <div class="col-sm-6">
+    <h5>All Flavors:</h5>
+    @if (ViewBag.Flavors.Count > 0)
+    {
+      <ul>
+        @foreach (Flavor flavor in ViewBag.Flavors)
+        {
+          <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+        }
+      </ul>
+    }
+    else
+    {
+      <h3>No Flavor(s) Available</h3>
+    }
+  </div>
+
+</div>
+
+<p>@Html.ActionLink("See the TREATS", "Index", "Treats")</p>
+<p>@Html.ActionLink("See the FLAVORS", "Index", "Flavors")</p>
+<p>@Html.ActionLink("Create/Login", "Index", "Account")</p>
