@@ -11,3 +11,15 @@ body {
     rgb(255, 0, 0)
   );
 }
+
+.greet {
+  padding-bottom: 10vh;
+  padding-top: 6vh;
+}
+
+.links {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  font-size: 3rem;
+}

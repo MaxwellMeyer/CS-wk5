@@ -2,10 +2,16 @@
   Layout = "_Layout";
 }
 @using TreatShop.Models;
+<div class="greet">
+  <h1>Welcome to Pierre's SWEET TREAT SHOP!</h1>
+  <h3>We also have savory treats... Dont worry...</h3>
+</div>
 
-<h1>Welcome to Pierre's SWEET TREAT SHOP!</h1>
-<h3>We also have savory treats... Dont worry...</h3>
-
+<div class="links">
+  <p>@Html.ActionLink("See the TREATS", "Index", "Treats")</p>
+  <p>@Html.ActionLink("See the FLAVORS", "Index", "Flavors")</p>
+  <p>@Html.ActionLink("Create Account/Login", "Index", "Account")</p>
+</div>
 
 <div class="row">
   <div class="col-sm-6">
@@ -44,7 +50,3 @@
   </div>
 
 </div>
-
-<p>@Html.ActionLink("See the TREATS", "Index", "Treats")</p>
-<p>@Html.ActionLink("See the FLAVORS", "Index", "Flavors")</p>
-<p>@Html.ActionLink("Create/Login", "Index", "Account")</p>
